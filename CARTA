@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Sofía, con todo mi amor</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body {
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      font-family: 'Pacifico', cursive;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #4b2e83;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2em;
+    }
+
+    .flower {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      position: relative;
+      animation: bloom 2s ease forwards;
+      cursor: pointer;
+    }
+
+    /* Simple flower petals using CSS */
+    .petal {
+      width: 60px;
+      height: 90px;
+      background: #ff6f91;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: absolute;
+      top: 30px;
+      left: 45px;
+      transform-origin: bottom center;
+      opacity: 0;
+      animation: petal-appear 1.5s forwards;
+    }
+    .petal:nth-child(1) { transform: rotate(0deg); animation-delay: 0.3s; }
+    .petal:nth-child(2) { transform: rotate(45deg); animation-delay: 0.6s; left: 30px; top: 15px;}
+    .petal:nth-child(3) { transform: rotate(90deg); animation-delay: 0.9s; left: 10px; top: 40px;}
+    .petal:nth-child(4) { transform: rotate(135deg); animation-delay: 1.2s; left: 25px; top: 65px;}
+    .center {
+      width: 50px;
+      height: 50px;
+      background: #ff8f8f;
+      border-radius: 50%;
+      position: absolute;
+      top: 60px;
+      left: 50px;
+      box-shadow: 0 0 8px 3px #ff5a5a99;
+      opacity: 0;
+      animation: center-appear 1.5s forwards 1.5s;
+    }
+
+    @keyframes bloom {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes petal-appear {
+      to { opacity: 1; }
+    }
+    @keyframes center-appear {
+      to { opacity: 1; }
+    }
+
+    button {
+      background-color: #ff6f91;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      margin-top: 30px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(255, 111, 145, 0.6);
+      transition: background-color 0.3s ease;
+      font-family: 'Pacifico', cursive;
+    }
+    button:hover {
+      background-color: #ff4c6a;
+    }
+
+    #message {
+      margin-top: 25px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #3b1f50;
+      min-height: 50px;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Para Sofía, con mucho cariño de Landon💖</h1>
+
+  <div class="flower" title="Haz clic en la flor para una sorpresa" onclick="mostrarMensaje()">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="center"></div>
+  </div>
+
+  <button onclick="mostrarMensaje()">¡Toca aqui para decirte algunas cosas!</button>
+
+  <div id="message"></div>
+
+  <script>
+    const mensajes = [
+      "Me encantas mucho Sofi.",
+      "Prometo cuidarte y estar siempre para ti, en las buenas en las malas y en las peores.",
+      "Desde que te conoci vi a una persona muy especial y hermosa.",
+      "Te quiero un mundo, gracias a Dios pude ver la persona que tenia en mi camino y esta vez quiero hacerlo de la mejor manera.",
+      "Eres unas persona muy especial para todos,nunca escuches los malos comentarios porque vales mucho .",
+      "Pon todas la cosas en manos de Dios, como siempre lo has hecho y todo va a salir bien siempre princesa."
+    ];
+
+    function mostrarMensaje() {
+      const msgDiv = document.getElementById('message');
+      const indice = Math.floor(Math.random() * mensajes.length);
+      msgDiv.textContent = mensajes[indice];
+    }
+  </script>
+</body>
+</html>
