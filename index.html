@@ -14,16 +14,17 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
+      padding: 20px;
       color: #4b2e83;
       text-align: center;
-      overflow: hidden;
+      box-sizing: border-box;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 0.2em;
+      font-size: 2.5rem;
+      margin-bottom: 0.5em;
     }
 
     .flower {
@@ -35,7 +36,6 @@
       cursor: pointer;
     }
 
-    /* Simple flower petals using CSS */
     .petal {
       width: 60px;
       height: 90px;
@@ -82,7 +82,7 @@
       color: white;
       padding: 15px 30px;
       margin-top: 30px;
-      font-size: 1.2rem;
+      font-size: 1rem;
       border-radius: 30px;
       cursor: pointer;
       box-shadow: 0 6px 15px rgba(255, 111, 145, 0.6);
@@ -95,16 +95,31 @@
 
     #message {
       margin-top: 25px;
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.2rem;
+      font-weight: 500;
       color: #3b1f50;
-      min-height: 50px;
-      max-width: 300px;
+      min-height: 60px;
+      max-width: 90%;
+      word-wrap: break-word;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      #message {
+        font-size: 1rem;
+      }
+      button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Para Sofía, con mucho cariño de Landon💖</h1>
+  <h1>Para Sofía, con mucho cariño de Landon 💖</h1>
 
   <div class="flower" title="Haz clic en la flor para una sorpresa" onclick="mostrarMensaje()">
     <div class="petal"></div>
@@ -114,18 +129,18 @@
     <div class="center"></div>
   </div>
 
-  <button onclick="mostrarMensaje()">¡Toca aqui para decirte algunas cosas!</button>
+  <button onclick="mostrarMensaje()">¡Toca aquí para decirte algunas cosas!</button>
 
   <div id="message"></div>
 
   <script>
     const mensajes = [
-      "Me encantas mucho Sofi.",
-      "Prometo cuidarte y estar siempre para ti, en las buenas en las malas y en las peores.",
-      "Desde que te conoci vi a una persona muy especial y hermosa.",
-      "Te quiero un mundo, gracias a Dios pude ver la persona que tenia en mi camino y esta vez quiero hacerlo de la mejor manera.",
-      "Eres unas persona muy especial para todos,nunca escuches los malos comentarios porque vales mucho .",
-      "Pon todas la cosas en manos de Dios, como siempre lo has hecho y todo va a salir bien siempre princesa."
+      "Me encantas mucho, Sofi.",
+      "Prometo cuidarte y estar siempre para ti, en las buenas, en las malas y en las peores.",
+      "Desde que te conocí vi a una persona muy especial y hermosa.",
+      "Te quiero un mundo. Gracias a Dios pude ver la persona que tenía en mi camino, y esta vez quiero hacerlo de la mejor manera.",
+      "Eres una persona muy especial para todos. Nunca escuches los malos comentarios porque vales mucho.",
+      "Pon todas las cosas en manos de Dios, como siempre lo has hecho, y todo va a salir bien siempre, princesa."
     ];
 
     function mostrarMensaje() {
